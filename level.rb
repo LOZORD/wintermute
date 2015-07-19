@@ -7,7 +7,7 @@ class Level
   MAX_WIDTH   = 50
   MAX_HEIGHT  = 50
   @@rng = nil
-  attr_accessor :grid, :width, :height, :difficulty
+  attr_accessor :grid, :width, :height, :difficulty, :m
   def initialize(**options)
     @@rng ||= Random.new options[:seed].to_i
     @difficulty = options[:difficulty]
@@ -18,8 +18,9 @@ class Level
       BlockGroup.new filename: group_name
     end
     @grid = Array.new(@width) { Array.new(@height) { Block.new } }
+    @m = MarkovEngine.new('./genre-markov.json', @@rng)
     setup!
-    generate!
+    # generate! TODO
   end
 
   def setup!
@@ -35,7 +36,7 @@ class Level
   end
 
   def add_group (x, y, group_name)
-    group = @block_groups.select { |block| block.name == group_name }.first
+    group = @block_groups.select { |block| block.name == group_name.to_s }.first
     fail "EXPECTED BlockGroup, but ACTUALLY #{ group.class }" unless group.is_a? BlockGroup
     if !((2...width-1).cover?(x) &&
         (2...height-1).cover?(y) &&
@@ -49,10 +50,24 @@ class Level
         grid[x + i][y + j].type = block.type
       end
     end
+    # TODO return final x,y
   end
 
+  # FIXME
   def generate!
+    self.add_group(0, 0, 'start')
+    next_steps = m.next(:start)
+    nx = ny = -1
+    while not (next_steps.member? :finish)
+      next_steps.each do |genre|
+        # FIXME: pseudocode
+        group = genre.get_group_in_direction(x,y)
+        nx, ny = grid.add_group x, y, group
+      end
+      next_steps = m.next(next_steps.last)
+    end
   end
+
   def grid_to_s (together = false)
     if together # as one single string
       (self.grid_to_s false).join("\n")

@@ -2,9 +2,10 @@ require 'json'
 
 # TODO: comment
 class MarkovEngine
-  attr_accessor :lut, :difficulty_scaling
+  attr_accessor :lut, :difficulty_scaling, :rng
 
-  def initialize(filename)
+  def initialize(filename, rng)
+    @rng = rng
     hash = JSON.parse(File.read(filename), symbolize_names: true)
     @lut = hash[:lut] || {}
     @difficulty_scaling = hash[:difficulty_scaling] || {}
@@ -25,7 +26,7 @@ class MarkovEngine
     # TODO: what to do with difficulty? ---> BUFF LIKELIHOOD OF HAZARDS
     possible_nexts = @lut[curr_state]
     sum = possible_nexts.values.reduce(:+)
-    thold = rand(0...sum) # non-inclusive
+    thold = rng.rand(0...sum) # non-inclusive
     next_state = pull_next_state(thold, 0, possible_nexts.to_a)
 
     [next_state] + next_rec(next_state, itrs - 1, diff)
