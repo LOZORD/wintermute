@@ -56,8 +56,7 @@ accel = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>checkHorizontalWall();
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -82,6 +81,7 @@ accel = 1;
             <string>//fsfjhgsdjfgsjdhfs
 
 checkHorizontalWall();
+checkVerticalWall();
 swapGender();
 if (!dead){
     setGravity();

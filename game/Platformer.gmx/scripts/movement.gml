@@ -6,7 +6,7 @@
 */
 
 if (keyboard_check(ord('A'))){
-    if (place_free(x-hspeed,y-3)){
+    if (place_free(x-(hspeed+accel),y-3)){
         if (state == STATE_IDLE){
             state = STATE_WALK;
         }
@@ -20,7 +20,7 @@ if (keyboard_check(ord('A'))){
         }
     }
 } else if (keyboard_check(ord('D'))){
-    if (place_free(x+hspeed,y-3)){
+    if (place_free(x+(hspeed+accel),y-3)){
         if (state == STATE_IDLE){
             state = STATE_WALK;
         }
