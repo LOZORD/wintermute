@@ -14,7 +14,7 @@
     <sprite>sprites\sprPlayerMaleDeath</sprite>
     <sprite>sprites\sprPlayerFemale</sprite>
     <sprite>sprites\sprPlayerFemaleDeath</sprite>
-    <sprite>sprites\sprSpike</sprite>
+    <sprite>sprites\sprRocketLauncherBlock</sprite>
     <sprite>sprites\sprRocket</sprite>
     <sprite>sprites\sprRocketLauncher</sprite>
     <sprite>sprites\sprStart</sprite>
