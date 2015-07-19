@@ -45,12 +45,12 @@ function create() {
 
     layer.resizeWorld();
 
-    game.physics.arcade.gravity.y = 250;
+    game.physics.arcade.gravity.y = 1000;
 
     player = game.add.sprite(32, 32, 'dude');
     game.physics.enable(player, Phaser.Physics.ARCADE);
 
-    player.body.bounce.y = 0.2;
+    //player.body.bounce.y = 0.2;
     player.body.collideWorldBounds = true;
     player.body.setSize(20, 32, 5, 16);
 
@@ -63,17 +63,27 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
+	
+	player.double_jump = false;
+	player.movement_speed = 300;
+
 }
 
 function update() {
 
-    game.physics.arcade.collide(player, layer);
+    //game.physics.arcade.collide(player, layer);
+	//Jumping off walls
+	game.physics.arcade.collide(player, layer, function() {
+		//Function for collision with the walls?
+		player.body.gravity.y = 0;
+		player.body.velocity.y = 0;
+	} );
 
     player.body.velocity.x = 0;
 
     if (cursors.left.isDown)
     {
-        player.body.velocity.x = -150;
+        player.body.velocity.x = -player.movement_speed;
 
         if (facing != 'left')
         {
@@ -83,7 +93,7 @@ function update() {
     }
     else if (cursors.right.isDown)
     {
-        player.body.velocity.x = 150;
+        player.body.velocity.x = player.movement_speed;
 
         if (facing != 'right')
         {
@@ -110,11 +120,28 @@ function update() {
         }
     }
     
-    if (jumpButton.isDown && player.body.onFloor() && game.time.now > jumpTimer)
+    if (jumpButton.isDown && game.time.now > jumpTimer)
     {
-        player.body.velocity.y = -250;
-        jumpTimer = game.time.now + 750;
+		var jump = 350;
+		var jump_timer = 250;
+		if (player.body.onFloor())
+		{
+			
+			player.body.velocity.y = -jump;
+			jumpTimer = game.time.now + jump_timer;
+		} else if (!player.double_jump){
+			
+			player.body.velocity.y = -jump;
+			jumpTimer = game.time.now + jump_timer;
+			player.double_jump = true;
+		}
     }
+	
+	if (player.body.onFloor()){
+		player.double_jump = false;
+	}
+	
+	
 
 }
 
