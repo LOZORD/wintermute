@@ -17,7 +17,7 @@ class Block
       char = type
       @type = @@block_types[char]['type'].to_sym
     else
-      fail 'UNKNOWN TYPE: ' + type.to_s
+      fail ('UNKNOWN TYPE: ' + type.to_s + ' WITH CLASS ' + type.class.to_s)
     end
   end
 

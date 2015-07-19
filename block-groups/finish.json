@@ -2,10 +2,10 @@
   "name": "finish",
   "genre": "finish",
   "blocks": [
-    "           ",
-    "     F     ",
-    "   #####   "
+    "       ",
+    "   F   ",
+    " ##### "
   ],
   "height": 3,
-  "width": 11
+  "width": 7
 }
