@@ -1,4 +1,4 @@
 sprite_index = sprWall;
 vspeed = -14;
-gravity = 1;
+gravity = HERO_GRAVITY;
 dead = true;

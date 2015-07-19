@@ -53,13 +53,36 @@
   <instances>
     <instance objName="Wall" x="0" y="608" name="inst_3E4ADF11" locked="0" code="" scaleX="9" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="Player" x="64" y="576" name="inst_04E9E5EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Wall" x="544" y="704" name="inst_D527DE59" locked="0" code="" scaleX="6" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="Wall" x="384" y="864" name="inst_08A0C19E" locked="0" code="" scaleX="4" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="Wall" x="448" y="640" name="inst_1F8C3D3E" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="512" y="480" name="inst_D527DE59" locked="0" code="" scaleX="6" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="768" y="416" name="inst_08A0C19E" locked="0" code="" scaleX="5" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="352" y="544" name="inst_1F8C3D3E" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="Spikes" x="160" y="576" name="inst_77787634" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Spikes" x="192" y="576" name="inst_AA8C9939" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Spikes" x="224" y="576" name="inst_1B054BAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Spikes" x="256" y="576" name="inst_D3B6C8CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="RocketLauncher" x="928" y="384" name="inst_1E29B256" locked="0" code="direction = 180;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="1056" y="384" name="inst_970DF303" locked="0" code="" scaleX="7" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="448" y="320" name="inst_1C380F72" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="800" y="224" name="inst_7C36D69F" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="64" y="224" name="inst_7F25A353" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="768" y="512" name="inst_BE7DE7EB" locked="0" code="" scaleX="5" scaleY="8" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="1056" y="448" name="inst_219C115D" locked="0" code="" scaleX="7" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="768" y="896" name="inst_08C160D5" locked="0" code="" scaleX="16" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="448" y="960" name="inst_7A10530D" locked="0" code="" scaleX="6" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="64" y="1024" name="inst_C769BC70" locked="0" code="" scaleX="8" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="384" y="1152" name="inst_1756CFDE" locked="0" code="" scaleX="7" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="Spikes" x="960" y="864" name="inst_A1CBB699" locked="0" code="down_time = 5*SECOND;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Spikes" x="992" y="864" name="inst_1ED84B73" locked="0" code="down_time = 5*SECOND;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Spikes" x="1024" y="864" name="inst_0827390F" locked="0" code="down_time = 5*SECOND;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Spikes" x="928" y="864" name="inst_E608F0DA" locked="0" code="down_time = 5*SECOND;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="RocketLauncher" x="128" y="992" name="inst_4FADD6B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Spikes" x="224" y="192" name="inst_D640AC97" locked="0" code="down_time = 3*SECOND;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Spikes" x="256" y="192" name="inst_911B4437" locked="0" code="down_time = 3*SECOND;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Spikes" x="192" y="192" name="inst_565B8472" locked="0" code="down_time = 3*SECOND;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Spikes" x="928" y="192" name="inst_D98C7F54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Spikes" x="960" y="192" name="inst_C29AEC29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="0" y="256" name="inst_4DDF784C" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
+    <instance objName="Wall" x="128" y="256" name="inst_6CD9ED34" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

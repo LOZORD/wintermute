@@ -7,8 +7,11 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprWall</sprite>
-    <sprite>sprites\sprPlayer</sprite>
+    <sprite>sprites\sprPlayerMale</sprite>
+    <sprite>sprites\sprPlayerFemale</sprite>
     <sprite>sprites\sprSpike</sprite>
+    <sprite>sprites\sprRocket</sprite>
+    <sprite>sprites\sprRocketLauncher</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -19,6 +22,14 @@
       <script>scripts\checkDeadly.gml</script>
       <script>scripts\movement.gml</script>
       <script>scripts\deathFunction.gml</script>
+      <script>scripts\swapGender.gml</script>
+      <script>scripts\setSprite.gml</script>
+      <script>scripts\script5.gml</script>
+      <script>scripts\jump.gml</script>
+      <script>scripts\setGravity.gml</script>
+      <script>scripts\grabWall.gml</script>
+      <script>scripts\checkGrab.gml</script>
+      <script>scripts\checkHorizontalWall.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -28,12 +39,28 @@
       <object>objects\parObstacle</object>
       <object>objects\Spikes</object>
       <object>objects\parDeadly</object>
+      <object>objects\Rocket</object>
     </objects>
+    <object>objects\RocketLauncher</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
-  <constants number="1">
+  <constants number="15">
+    <constant name="STATE_GRAB">5</constant>
+    <constant name="STATE_DJUMP">4</constant>
+    <constant name="STATE_JUMP">3</constant>
+    <constant name="STATE_RUN">2</constant>
+    <constant name="STATE_WALK">1</constant>
+    <constant name="STATE_IDLE">0</constant>
+    <constant name="HERO_GRAB_DIST">6</constant>
+    <constant name="HERO_RUNSPEED">10</constant>
+    <constant name="HERO_MOVESPEED">6</constant>
+    <constant name="HERO_GRAVITY">2</constant>
+    <constant name="HERO_JUMP_SPEED">22</constant>
+    <constant name="ROCKET_SPEED">10</constant>
+    <constant name="MALE">0</constant>
+    <constant name="FEMALE">1</constant>
     <constant name="SECOND">room_speed</constant>
   </constants>
   <help>

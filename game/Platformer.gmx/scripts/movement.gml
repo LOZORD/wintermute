@@ -5,32 +5,41 @@
 
 */
 
-if (!dead){
-    var movementSpeed= 4;
-    
-    if (!place_free(x,y+vspeed)){
-        gravity = 0;
-       
-        move_contact_solid(270,vspeed); 
-        vspeed = 0;
-    }
-    else {
-        gravity = 1;
-    }
-    
-    if (keyboard_check(ord('W'))){
-        if (!place_free(x,y+1)){
-            vspeed = -10;
+if (keyboard_check(ord('A'))){
+    if (place_free(x-hspeed,y-3)){
+        if (state == STATE_IDLE){
+            state = STATE_WALK;
+        }
+        var top_speed = HERO_MOVESPEED;
+        if (keyboard_check(vk_lshift)){
+            top_speed = HERO_RUNSPEED;
+        }
+        
+        if (hspeed - accel > -top_speed){
+            hspeed -= accel;
         }
     }
-    
-    if (keyboard_check(ord('A'))){
-        if (place_free(x-4,y-3)){
-            x -= movementSpeed;
+} else if (keyboard_check(ord('D'))){
+    if (place_free(x+hspeed,y-3)){
+        if (state == STATE_IDLE){
+            state = STATE_WALK;
         }
-    } else if (keyboard_check(ord('D'))){
-        if (place_free(x+4,y-3)){
-            x += movementSpeed;
+        var top_speed = HERO_MOVESPEED;
+        if (keyboard_check(vk_lshift)){
+            top_speed = HERO_RUNSPEED;
         }
+        
+        if (hspeed + accel < top_speed){
+            hspeed += accel;
+        }
+    }
+}
+
+if (!keyboard_check(ord('A')) && !keyboard_check(ord('D'))){
+    if (hspeed != 0){
+        hspeed -= sign(hspeed);
+    }
+    if (vspeed == 0 && hspeed = 0){
+        state = STATE_IDLE;
     }
 }
