@@ -16,6 +16,9 @@
   },
   "$": {
     "type": "crate"
+  },
+  "r": {
+    "type": "turret"
   }
 }
 
