@@ -28,6 +28,12 @@ class Block
     end
   end
 
+  def type= (other_type)
+    fail 'NOT A SYMBOL!' unless other_type.is_a? Symbol
+    fail 'UNKNOWN TYPE!' unless @@type_to_char.has_key? other_type
+    @type = other_type
+  end
+
   def char
     @@type_to_char[type].to_s
   end
@@ -55,9 +61,10 @@ end
 
 # TODO: comment
 class Level
+  @@rng = nil
   attr_accessor :grid, :width, :height, :difficulty
-
   def initialize(**options)
+    @@rng ||= Random.new options[:seed].to_i
     @difficulty = options[:difficulty]
     @width = options[:width] || MAX_WIDTH
     @height = options[:height] || MAX_HEIGHT
@@ -72,13 +79,13 @@ class Level
 
   def setup!
     (0...width).each do |x|
-      grid[x][0].type = :platform
-      grid[x][height-1].type = :platform
+      grid[x][0].type = :barrier
+      grid[x][height-1].type = :barrier
     end
 
     (0...height).each do |y|
-      grid[0][y].type = :platform
-      grid[width-1][y].type = :platform
+      grid[0][y].type = :barrier
+      grid[width-1][y].type = :barrier
     end
   end
 
@@ -95,7 +102,8 @@ class Level
   end
 end
 
-diff = ARGV.first || 1
+seed_val = ARGV[0].to_i || 1234
+diff = ARGV[1] || 1
 
 block_groups = [
   'start',
@@ -105,6 +113,6 @@ block_groups = [
   'spike-pit'
 ]
 
-lvl = Level.new difficulty: diff, block_groups: block_groups
+lvl = Level.new seed: seed_val, difficulty: diff, block_groups: block_groups
 
 puts lvl.to_s
