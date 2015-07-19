@@ -2,19 +2,29 @@ require 'json.rb'
 # require 'set.rb'
 
 # measured in block sizes
-MAX_WIDTH = 150
-MAX_HEIGHT = 150
+MAX_WIDTH = 50
+MAX_HEIGHT = 50
 
 # TODO: comment
 class Block
-  @@block_types ||= JSON.parse(File.read('./tile-types.json'), symbolize_names: false)
+  @@block_types ||= JSON.parse(File.read('./block-types.json'), symbolize_names: false)
+  @@type_to_char = @@block_types.keys.reduce({}) do |obj, char|
+    puts obj
+    someSym = (@@block_types[char]['type'].to_sym)
+    puts someSym
+    obj[someSym] = char
+    obj
+  end
+
   attr_accessor :type
   def initialize(type = :empty)
-    if type.is_a? Symbol
-      @type = type
-    elsif type.is_a? String
-      @type = @@block_types[type]['type'].to_sym
-    end
+    #@type = @@oblock_types[char]['type'].to_sym
+    # FIXME
+    @type = type
+  end
+
+  def char
+    @@type_to_char[type]
   end
 end
 
@@ -33,6 +43,7 @@ class BlockGroup
     @width = options[:width] || parse[:width]
     @height = options[:height] || parse[:height]
     @blocks = Array.new(@width) do |x|
+      # FIXME
       Array.new(@height) { |y| Block.new block_arr[y][x] }
     end
   end
@@ -56,9 +67,23 @@ class Level
   end
 
   def setup!
+    (0...width).each do |x|
+      grid[x][0].type = :platform
+      grid[x][height-1].type = :platform
+    end
+
+    (0...height).each do |y|
+      grid[0][y].type = :platform
+      grid[width-1].type = :platform
+    end
   end
 
   def generate!
+  end
+  def to_s
+    grid.map do |row|
+      row.join { |block| block.char }
+    end
   end
 end
 
@@ -76,3 +101,4 @@ lvl = Level.new difficulty: diff, block_groups: block_groups
 
 puts lvl.grid
 puts lvl.height
+puts lvl.to_s
