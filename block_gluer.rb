@@ -18,13 +18,18 @@ class Block
 
   attr_accessor :type
   def initialize(type = :empty)
-    #@type = @@oblock_types[char]['type'].to_sym
-    # FIXME
-    @type = type
+    if type.is_a? Symbol
+      @type = type
+    elsif type.is_a? String
+      char = type
+      @type = @@block_types[char]['type'].to_sym
+    else
+      fail 'UNKNOWN TYPE: ' + type.to_s
+    end
   end
 
   def char
-    @@type_to_char[type]
+    @@type_to_char[type].to_s
   end
 end
 
@@ -43,7 +48,6 @@ class BlockGroup
     @width = options[:width] || parse[:width]
     @height = options[:height] || parse[:height]
     @blocks = Array.new(@width) do |x|
-      # FIXME
       Array.new(@height) { |y| Block.new block_arr[y][x] }
     end
   end
@@ -74,16 +78,20 @@ class Level
 
     (0...height).each do |y|
       grid[0][y].type = :platform
-      grid[width-1].type = :platform
+      grid[width-1][y].type = :platform
     end
   end
 
   def generate!
   end
-  def to_s
+  def grid_to_s
     grid.map do |row|
-      row.join { |block| block.char }
+      row.reduce('') { |str, block| str += block.char }
     end
+  end
+
+  def to_s
+    { width: width, height: height, grid: self.grid_to_s }.to_s
   end
 end
 
@@ -99,6 +107,4 @@ block_groups = [
 
 lvl = Level.new difficulty: diff, block_groups: block_groups
 
-puts lvl.grid
-puts lvl.height
 puts lvl.to_s
