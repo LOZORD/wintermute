@@ -35,9 +35,13 @@ class Level
 
   def generate!
   end
-  def grid_to_s
-    grid.map do |row|
-      row.reduce('') { |str, block| str += block.char }
+  def grid_to_s (together = false)
+    if together # as one single string
+      (self.grid_to_s false).join("\n")
+    else # as an array
+      grid.map do |row|
+        row.reduce('') { |str, block| str += block.char }
+      end
     end
   end
 

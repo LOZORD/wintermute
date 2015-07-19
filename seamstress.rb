@@ -9,4 +9,6 @@ puts block_groups
 
 lvl = Level.new seed: seed_val, difficulty: diff, block_groups: block_groups
 
-puts lvl.to_s
+# puts lvl.to_s
+
+puts lvl.grid_to_s true
