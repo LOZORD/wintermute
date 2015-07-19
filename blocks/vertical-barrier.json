@@ -1,0 +1,9 @@
+{
+  "name": "vertical-barrier",
+  "blocks": [
+    "#",
+    "#",
+  ],
+  "width": 1,
+  "height": 2
+}

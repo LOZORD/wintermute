@@ -1,0 +1,21 @@
+{
+  " ": {
+    "name": "empty"
+  },
+  "S": {
+    "name": "start"
+  },
+  "F": {
+    "name": "finish"
+  },
+  "#": {
+    "name": "barrier"
+  },
+  "^": {
+    "name": "spikes"
+  },
+  "$": {
+    "name": "crate"
+  }
+}
+

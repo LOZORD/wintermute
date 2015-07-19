@@ -1,0 +1,10 @@
+{
+  "name": "spike-pit",
+  "blocks": [
+    "# #",
+    "#^#"
+  ],
+  "width": 3,
+  "height": 2
+}
+
