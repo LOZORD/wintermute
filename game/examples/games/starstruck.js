@@ -73,11 +73,13 @@ function update() {
 
     //game.physics.arcade.collide(player, layer);
 	//Jumping off walls
-	game.physics.arcade.collide(player, layer, function() {
-		//Function for collision with the walls?
-		player.body.gravity.y = 0;
-		player.body.velocity.y = 0;
-	} );
+	game.physics.arcade.collide(player, layer , function(){
+		
+		var wallLeft, wallRight,wallTop, wallBottom;
+		if (game.physics.arcade.getObjectsAtLocation(player.body.x+16, player.body.y, group))
+		
+		
+	},function(){},function(){});
 
     player.body.velocity.x = 0;
 
