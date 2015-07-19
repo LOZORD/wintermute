@@ -1,0 +1,10 @@
+{
+  "name": "turret_platform",
+  "blocks": [
+    "   ",
+    " r ",
+    "###"
+  ],
+  "width": 3,
+  "height": 3
+}
