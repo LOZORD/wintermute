@@ -11,7 +11,7 @@ if (keyboard_check(ord('A'))){
             state = STATE_WALK;
         }
         var top_speed = HERO_MOVESPEED;
-        if (keyboard_check(vk_lshift)){
+        if (keyboard_check(vk_shift)){
             top_speed = HERO_RUNSPEED;
         }
         
@@ -25,7 +25,7 @@ if (keyboard_check(ord('A'))){
             state = STATE_WALK;
         }
         var top_speed = HERO_MOVESPEED;
-        if (keyboard_check(vk_lshift)){
+        if (keyboard_check(vk_shift)){
             top_speed = HERO_RUNSPEED;
         }
         
@@ -39,7 +39,7 @@ if (!keyboard_check(ord('A')) && !keyboard_check(ord('D'))){
     if (hspeed != 0){
         hspeed -= sign(hspeed);
     }
-    if (vspeed == 0 && hspeed = 0){
+    if (state == STATE_WALK){
         state = STATE_IDLE;
     }
 }

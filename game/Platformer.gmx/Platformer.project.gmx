@@ -11,7 +11,9 @@
     <sprite>sprites\sprite6</sprite>
     <sprite>sprites\sprWall</sprite>
     <sprite>sprites\sprPlayerMale</sprite>
+    <sprite>sprites\sprPlayerMaleDeath</sprite>
     <sprite>sprites\sprPlayerFemale</sprite>
+    <sprite>sprites\sprPlayerFemaleDeath</sprite>
     <sprite>sprites\sprSpike</sprite>
     <sprite>sprites\sprRocket</sprite>
     <sprite>sprites\sprRocketLauncher</sprite>
@@ -44,6 +46,7 @@
     <scripts name="Enemies">
       <script>scripts\enemyMove.gml</script>
       <script>scripts\checkEnemyDeath.gml</script>
+      <script>scripts\enemyAttack.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

@@ -5,9 +5,17 @@
 
 switch (gender){
     case MALE:
-        sprite_index = sprPlayerMale;
+        if (dead){
+            sprite_index = sprPlayerMaleDeath;
+        } else {
+            sprite_index = sprPlayerMale;
+        }
         break;
     case FEMALE:
-        sprite_index = sprPlayerFemale;
+        if (dead){
+            sprite_index = sprPlayerFemaleDeath;
+        } else {
+            sprite_index = sprPlayerFemale;
+        }
         break;
 }

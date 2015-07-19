@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>wall = noone;
 maxspeed = 5;
-
+facing = 1;
 speed = maxspeed;
 </string>
           </argument>
@@ -51,7 +51,8 @@ speed = maxspeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enemyMove();
+            <string>enemyAttack();
+enemyMove();
 checkEnemyDeath();
 </string>
           </argument>
@@ -77,34 +78,6 @@ checkEnemyDeath();
             <kind>1</kind>
             <string>//This is custom defence event, when the player tries to hurt the enemy, the enemy will decide
 // if the player can hurt it (i.e. jumping on a spiky enemy vs a non-spiky enemy
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_self();
-
-if(instance_exists(wall)){
-    draw_circle(wall.x, wall.y,5,false);
-    draw_circle(wall.x+wall.sprite_width,wall.y,5, false);
-}
 </string>
           </argument>
         </arguments>
