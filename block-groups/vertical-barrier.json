@@ -1,5 +1,6 @@
 {
   "name": "vertical-barrier",
+  "genre": "structure",
   "blocks": [
     "#",
     "#"

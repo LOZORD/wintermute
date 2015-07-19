@@ -9,7 +9,7 @@ class BlockGroup
     fail 'NEED A FILENAME!' unless @filename
     parse = JSON.parse(File.read(@filename), symbolize_names: true)
     p parse
-    @name = options[:name] || options[:filename] || parse[:name]
+    @name = options[:name] || parse[:name] || options[:filename].chomp('.json')
     block_arr = options[:blocks] || parse[:blocks]
     @width = options[:width] || parse[:width]
     @height = options[:height] || parse[:height]
