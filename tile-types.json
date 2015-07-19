@@ -1,21 +1,21 @@
 {
   " ": {
-    "name": "empty"
+    "type": "empty"
   },
   "S": {
-    "name": "start"
+    "type": "start"
   },
   "F": {
-    "name": "finish"
+    "type": "finish"
   },
   "#": {
-    "name": "barrier"
+    "type": "barrier"
   },
   "^": {
-    "name": "spikes"
+    "type": "spikes"
   },
   "$": {
-    "name": "crate"
+    "type": "crate"
   }
 }
 
