@@ -15,5 +15,5 @@
   <For3D>0</For3D>
   <width>1024</width>
   <height>1024</height>
-  <data>images\background1.png</data>
+  <data>images\backTileset.png</data>
 </background>

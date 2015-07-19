@@ -11,5 +11,10 @@ if (dead == false){
     if (instance_exists(deadly)){
         //call the death event, which contains the death function
         event_user(0);
+        with(deadly){
+            if (destructable){
+                instance_destroy();
+            }
+        }
     }
 }
