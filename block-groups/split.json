@@ -1,0 +1,12 @@
+{
+  "name": "split",
+  "genre": "structure",
+  "blocks": [
+    "          ",
+    "   #######",
+    "  #       ",
+    "##########"
+  ],
+  "width": 10,
+  "height": 4
+}

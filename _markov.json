@@ -1,0 +1,62 @@
+{
+  "start": {
+    "start": 0,
+    "finish": 1,
+    "gap": 5,
+    "horizontal-barrier": 8,
+    "multigaps": 5,
+    "spike-pit": 3,
+    "stair-down" 13,
+    "stair-up": 13,
+    "turret-platform": 2,
+    "vertical-barrier": 2
+  },
+  "finish": {
+    "start": 0,
+    "finish": 0,
+    "gap": 5,
+    "horizontal-barrier": 8,
+    "multigaps": 5,
+    "spike-pit": 21,
+    "stair-down" 2,
+    "stair-up": 8,
+    "turret-platform": 0,
+    "vertical-barrier": 21
+  },
+  "gap": {
+    "start": 0,
+    "finish": 1,
+    "gap": 3,
+    "horizontal-barrier": 13,
+    "multigaps": 8,
+    "spike-pit": 13,
+    "stair-down" 5,
+    "stair-up": 5,
+    "turret-platform": 3,
+    "vertical-barrier": 3
+  },
+  "horizontal-barrier": {
+    "start": 0,
+    "finish": 3,
+    "gap": 5,
+    "horizontal-barrier": 34,
+    "multigaps": 21,
+    "spike-pit": 21,
+    "stair-down" 8,
+    "stair-up": 8,
+    "turret-platform": 21,
+    "vertical-barrier": 5
+  },
+  "multigaps": {
+  },
+  "spike-pit": {
+  },
+  "stair-down": {
+  },
+  "stair-up": {
+  },
+  "turret-platform": {
+  },
+  "vertical-barrier": {
+  }
+}

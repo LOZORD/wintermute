@@ -1,0 +1,12 @@
+{
+  "name": "stair_up",
+  "genre": "structure",
+  "blocks": [
+    "    #",
+    "   ##",
+    "  ###",
+    "#####"
+  ],
+  "width": 5,
+  "height": 4
+}

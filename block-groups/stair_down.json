@@ -1,0 +1,12 @@
+{
+  "name": "stair_down",
+  "genre": "structure",
+  "blocks": [
+    "    #",
+    "   ##",
+    "  ###",
+    "#####"
+  ],
+  "width": 5,
+  "height": 4
+}

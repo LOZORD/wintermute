@@ -1,0 +1,11 @@
+{
+  "name": "turret_platform",
+  "genre": "hazard",
+  "blocks": [
+    "   ",
+    " r ",
+    "###"
+  ],
+  "width": 3,
+  "height": 3
+}

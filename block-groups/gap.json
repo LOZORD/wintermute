@@ -1,0 +1,9 @@
+{
+  "name": "gap",
+  "genre": "hazard",
+  "blocks": [
+    "# #"
+  ],
+  "width": 3,
+  "height": 1
+}
