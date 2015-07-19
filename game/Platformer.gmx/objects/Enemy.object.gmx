@@ -29,6 +29,7 @@
 maxspeed = 5;
 facing = 1;
 speed = maxspeed;
+image_speed = 0.25;
 </string>
           </argument>
         </arguments>

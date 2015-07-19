@@ -22,6 +22,10 @@
     <sprite>sprites\sprSpikesSmall</sprite>
     <sprite>sprites\sprEnemy</sprite>
     <sprite>sprites\sprExplosion</sprite>
+    <sprite>sprites\sprExit</sprite>
+    <sprite>sprites\sprEntrance</sprite>
+    <sprite>sprites\sprSmoke</sprite>
+    <sprite>sprites\sprLogo</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -49,7 +53,11 @@
       <script>scripts\checkEnemyDeath.gml</script>
       <script>scripts\enemyAttack.gml</script>
     </scripts>
-    <script>scripts\level1.gml</script>
+    <scripts name="Levels">
+      <script>scripts\generateMap.gml</script>
+      <script>scripts\level1.gml</script>
+      <script>scripts\level2.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\Player</object>
@@ -62,6 +70,7 @@
       <object>objects\Rocket</object>
       <object>objects\LaserBall</object>
       <object>objects\Emitter</object>
+      <object>objects\Smoke</object>
     </objects>
     <objects name="Enemy">
       <object>objects\parEnemy</object>
@@ -75,8 +84,10 @@
     <objects name="Collectable">
       <object>objects\Disk</object>
     </objects>
+    <object>objects\Logo</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\INTRO</room>
     <room>rooms\room1</room>
     <room>rooms\room0</room>
   </rooms>
