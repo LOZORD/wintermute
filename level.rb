@@ -42,7 +42,7 @@ class Level
         (2...height-1).cover?(y) &&
         (2...width-1).cover?(x + group.width) &&
         (2...height-1).cover?(y + group.height))
-      fail 'Tried to add group out of bounds!'
+      fail "Tried to add group out of bounds! (x: #{ x }, y: #{ y })"
     end
 
     group.blocks.each_with_index do |row, j|
@@ -55,16 +55,20 @@ class Level
 
   # FIXME
   def generate!
-    self.add_group(0, 0, 'start')
+    self.add_group(2, 2, 'start')
     next_steps = m.next(:start)
+    puts next_steps
     nx = ny = -1
     while not (next_steps.member? :finish)
+      """
       next_steps.each do |genre|
         # FIXME: pseudocode
         group = genre.get_group_in_direction(x,y)
         nx, ny = grid.add_group x, y, group
       end
+      """
       next_steps = m.next(next_steps.last)
+      puts next_steps
     end
   end
 
