@@ -12,3 +12,7 @@ lvl = Level.new seed: seed_val, difficulty: diff, block_groups: block_groups
 # puts lvl.to_s
 
 puts lvl.grid_to_s true
+
+puts lvl.add_group 20, 20, 'start'
+
+puts lvl.grid_to_s true

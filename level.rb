@@ -1,5 +1,6 @@
 require 'json.rb'
 require_relative './block_group.rb'
+require_relative './markov_engine.rb'
 
 # TODO: comment
 class Level
@@ -30,6 +31,23 @@ class Level
     (0...height).each do |y|
       grid[0][y].type = :barrier
       grid[width-1][y].type = :barrier
+    end
+  end
+
+  def add_group (x, y, group_name)
+    group = @block_groups.select { |block| block.name == group_name }.first
+    fail "EXPECTED BlockGroup, but ACTUALLY #{ group.class }" unless group.is_a? BlockGroup
+    if !((2...width-1).cover?(x) &&
+        (2...height-1).cover?(y) &&
+        (2...width-1).cover?(x + group.width) &&
+        (2...height-1).cover?(y + group.height))
+      fail 'Tried to add group out of bounds!'
+    end
+
+    group.blocks.each_with_index do |row, j|
+      row.each_with_index do |block, i|
+        grid[x + i][y + j].type = block.type
+      end
     end
   end
 

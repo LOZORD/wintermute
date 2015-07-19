@@ -10,7 +10,7 @@ class Block
   end
 
   attr_accessor :type
-  def initialize(type = :empty)
+  def set_type! (type)
     if type.is_a? Symbol
       @type = type
     elsif type.is_a? String
@@ -21,10 +21,12 @@ class Block
     end
   end
 
+  def initialize(type = :empty)
+    set_type! type
+  end
+
   def type= (other_type)
-    fail 'NOT A SYMBOL!' unless other_type.is_a? Symbol
-    fail 'UNKNOWN TYPE!' unless @@type_to_char.has_key? other_type
-    @type = other_type
+    set_type! other_type
   end
 
   def char
