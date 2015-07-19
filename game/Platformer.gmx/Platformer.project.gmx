@@ -58,7 +58,10 @@
       <object>objects\LaserBall</object>
       <object>objects\Emitter</object>
     </objects>
-    <object>objects\Enemy</object>
+    <objects name="Enemy">
+      <object>objects\parEnemy</object>
+      <object>objects\Enemy</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
